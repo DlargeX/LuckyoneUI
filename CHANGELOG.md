@@ -1,3 +1,9 @@
+### Version 3.06 [In Development]
+**Retail:**  
+Added all Tank specializations to the LuckyoneUI edits of class WeakAura packs  
+Added more DPS specializations to the LuckyoneUI edits of class WeakAura packs  
+Updated "Setup Aura Filters" in /lucky config for some TWW AuraWatch IDs  
+___
 ### Version 3.05 [17-08-2024]
 **All WoW Versions:**  
 ElvUI 13.74+ compatibility  
