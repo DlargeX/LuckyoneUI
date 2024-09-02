@@ -1,6 +1,10 @@
 ### Version 3.07 [In Development]
 **Retail:**  
 Added Season 1 ElvUI NamePlate StyleFilters for Dungeons  
+Added Season 1 WeakAuras section for Dungeons  
+Updated Plater profile for Season 1 Dungeon custom colors  
+Updated tons of LuckyoneUI edits of class WeakAura packs  
+Updated WindTools profile  
 ___
 ### Version 3.06 [29-08-2024]
 **All WoW Versions:**  
