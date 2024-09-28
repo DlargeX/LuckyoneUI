@@ -1,4 +1,13 @@
-### Version 3.08 [In Development]
+### Version 3.09 [In Development]
+**All WoW Versions:**  
+Reduced update rate for Tags to 3 per second (was 4)  
+**Retail:**  
+Updated LuckyoneUI Class WeakAura Edits (Healer)  
+Updated LuckyoneUI Evoker WeakAura  
+___
+### Version 3.08 [24-09-2024]
+**All WoW Versions:**  
+ElvUI 13.78+ compatibility  
 **Retail:**  
 Added font outline to objective tracker text (Config -> Media -> Reset Media)  
 Fixed installer error preventing to apply WindTools profile  
