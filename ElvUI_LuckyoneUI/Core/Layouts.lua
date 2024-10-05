@@ -895,6 +895,21 @@ function Private:Layout_TheWarWithin(layout)
 	E.db.unitframe.units.player.buffs.perrow = 10
 	E.db.unitframe.units.player.buffs.priority = 'Blacklist,Personal,nonPersonal'
 	E.db.unitframe.units.player.buffs.yOffset = 1
+	E.db.unitframe.units.player.castbar.customColor.color.b = 0.05
+	E.db.unitframe.units.player.castbar.customColor.color.g = 0.05
+	E.db.unitframe.units.player.castbar.customColor.color.r = 0.05
+	E.db.unitframe.units.player.castbar.customColor.colorBackdrop.a = 0.89
+	E.db.unitframe.units.player.castbar.customColor.colorBackdrop.b = 0.61
+	E.db.unitframe.units.player.castbar.customColor.colorBackdrop.g = 0.56
+	E.db.unitframe.units.player.castbar.customColor.colorBackdrop.r = 0.54
+	E.db.unitframe.units.player.castbar.customColor.colorInterrupted.b = 0.30
+	E.db.unitframe.units.player.castbar.customColor.colorInterrupted.g = 0.30
+	E.db.unitframe.units.player.castbar.customColor.colorInterrupted.r = 0.30
+	E.db.unitframe.units.player.castbar.customColor.colorNoInterrupt.b = 0.05
+	E.db.unitframe.units.player.castbar.customColor.colorNoInterrupt.g = 0.05
+	E.db.unitframe.units.player.castbar.customColor.colorNoInterrupt.r = 0.05
+	E.db.unitframe.units.player.castbar.customColor.enable = true
+	E.db.unitframe.units.player.castbar.customColor.useCustomBackdrop = true
 	E.db.unitframe.units.player.castbar.customTextFont.enable = true
 	E.db.unitframe.units.player.castbar.customTextFont.font = Private.Font
 	E.db.unitframe.units.player.castbar.customTimeFont.enable = true
@@ -904,10 +919,10 @@ function Private:Layout_TheWarWithin(layout)
 	E.db.unitframe.units.player.castbar.textColor.b = 1
 	E.db.unitframe.units.player.castbar.textColor.g = 1
 	E.db.unitframe.units.player.castbar.textColor.r = 1
-	E.db.unitframe.units.player.castbar.tickColor.a = 0.9
-	E.db.unitframe.units.player.castbar.tickColor.b = 0.05
-	E.db.unitframe.units.player.castbar.tickColor.g = 0.05
-	E.db.unitframe.units.player.castbar.tickColor.r = 0.05
+	E.db.unitframe.units.player.castbar.tickColor.a = 0.89
+	E.db.unitframe.units.player.castbar.tickColor.b = 1
+	E.db.unitframe.units.player.castbar.tickColor.g = 1
+	E.db.unitframe.units.player.castbar.tickColor.r = 1
 	E.db.unitframe.units.player.castbar.timeToHold = 2
 	E.db.unitframe.units.player.castbar.xOffsetText = 2
 	E.db.unitframe.units.player.castbar.xOffsetTime = -2
@@ -934,6 +949,7 @@ function Private:Layout_TheWarWithin(layout)
 	E.db.unitframe.units.player.pvp.text_format = ''
 	E.db.unitframe.units.player.pvpIcon.scale = 0.85
 	E.db.unitframe.units.player.raidicon.enable = false
+	E.db.unitframe.units.player.raidRoleIcons.combatHide = true
 	E.db.unitframe.units.player.raidRoleIcons.yOffset = 1
 	E.db.unitframe.units.player.RestIcon.enable = false
 	E.db.unitframe.units.player.threatStyle = 'NONE'
@@ -1002,6 +1018,7 @@ function Private:Layout_TheWarWithin(layout)
 	E.db.unitframe.units.target.raidicon.size = 40
 	E.db.unitframe.units.target.raidicon.xOffset = 42
 	E.db.unitframe.units.target.raidicon.yOffset = 1
+	E.db.unitframe.units.target.raidRoleIcons.combatHide = true
 	E.db.unitframe.units.target.raidRoleIcons.position = 'TOPRIGHT'
 	E.db.unitframe.units.target.raidRoleIcons.yOffset = 1
 	E.db.unitframe.units.target.smartAuraPosition = 'FLUID_BUFFS_ON_DEBUFFS'
@@ -1107,6 +1124,7 @@ function Private:Layout_TheWarWithin(layout)
 	E.db.unitframe.units.party.phaseIndicator.scale = 0.5
 	E.db.unitframe.units.party.phaseIndicator.xOffset = 15
 	E.db.unitframe.units.party.power.enable = false
+	E.db.unitframe.units.party.raidRoleIcons.combatHide = true
 	E.db.unitframe.units.party.raidRoleIcons.yOffset = 1
 	E.db.unitframe.units.party.rdebuffs.enable = false
 	E.db.unitframe.units.party.readycheckIcon.attachTo = 'Frame'
@@ -1140,6 +1158,7 @@ function Private:Layout_TheWarWithin(layout)
 	E.db.unitframe.units.raid1.phaseIndicator.scale = 0.5
 	E.db.unitframe.units.raid1.power.enable = false
 	E.db.unitframe.units.raid1.pvpclassificationindicator.enable = false
+	E.db.unitframe.units.raid1.raidRoleIcons.combatHide = true
 	E.db.unitframe.units.raid1.raidRoleIcons.scale = 0.8
 	E.db.unitframe.units.raid1.raidRoleIcons.yOffset = 1
 	E.db.unitframe.units.raid1.readycheckIcon.position = 'TOP'
@@ -1171,7 +1190,7 @@ function Private:Layout_TheWarWithin(layout)
 	E.db.unitframe.units.raid3.debuffs.countFont = Private.Font
 	E.db.unitframe.units.raid3.debuffs.desaturate = false
 	E.db.unitframe.units.raid3.debuffs.maxDuration = 0
-	E.db.unitframe.units.raid3.debuffs.priority = 'Blacklist,RaidDebuffs,Dispellable'
+	E.db.unitframe.units.raid3.debuffs.priority = 'Blacklist,Dispellable,RaidDebuffs'
 	E.db.unitframe.units.raid3.disableFocusGlow = true
 	E.db.unitframe.units.raid3.disableTargetGlow = true
 	E.db.unitframe.units.raid3.fader.minAlpha = 0.5
@@ -1184,6 +1203,7 @@ function Private:Layout_TheWarWithin(layout)
 	E.db.unitframe.units.raid3.phaseIndicator.anchorPoint = 'LEFT'
 	E.db.unitframe.units.raid3.phaseIndicator.scale = 0.5
 	E.db.unitframe.units.raid3.pvpclassificationindicator.enable = false
+	E.db.unitframe.units.raid3.raidRoleIcons.combatHide = true
 	E.db.unitframe.units.raid3.raidRoleIcons.scale = 0.8
 	E.db.unitframe.units.raid3.raidRoleIcons.yOffset = 1
 	E.db.unitframe.units.raid3.readycheckIcon.position = 'RIGHT'
@@ -3658,7 +3678,7 @@ function Private:Layout_Shadowlands(layout)
 	E.db.unitframe.units.focus.raidicon.yOffset = 0
 	E.db.unitframe.units.focus.threatStyle = 'NONE'
 	E.db.unitframe.units.focustarget.buffs.countFont = Private.Font
-	E.db.unitframe.units.focustarget.buffs.priority = 'Blacklist,Personal,PlayerBuffs,Dispellable'
+	E.db.unitframe.units.focustarget.buffs.priority = 'Blacklist,Personal,Dispellable'
 	E.db.unitframe.units.focustarget.debuffs.attachTo = 'BUFFS'
 	E.db.unitframe.units.focustarget.debuffs.countFont = Private.Font
 	E.db.unitframe.units.focustarget.debuffs.maxDuration = 0
