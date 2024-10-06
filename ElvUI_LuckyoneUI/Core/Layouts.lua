@@ -79,6 +79,7 @@ function Private:Layout_TheWarWithin(layout)
 	E.db.general.objectiveFrameAutoHide = false
 	E.db.general.objectiveFrameHeight = 600
 	E.db.general.privateAuras.icon.size = 64
+	E.db.general.privateRaidWarning.scale = 2
 	E.db.general.queueStatus.scale = 0.3
 	E.db.general.tagUpdateRate = 0.33
 	E.db.general.talkingHeadFrameBackdrop = true
@@ -909,6 +910,7 @@ function Private:Layout_TheWarWithin(layout)
 	E.db.unitframe.units.player.castbar.customColor.colorNoInterrupt.g = 0.05
 	E.db.unitframe.units.player.castbar.customColor.colorNoInterrupt.r = 0.05
 	E.db.unitframe.units.player.castbar.customColor.enable = true
+	E.db.unitframe.units.player.castbar.customColor.transparent = true
 	E.db.unitframe.units.player.castbar.customColor.useCustomBackdrop = true
 	E.db.unitframe.units.player.castbar.customTextFont.enable = true
 	E.db.unitframe.units.player.castbar.customTextFont.font = Private.Font
