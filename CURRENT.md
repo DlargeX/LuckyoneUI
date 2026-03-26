@@ -1,30 +1,21 @@
-## Version 4.04 [25-02-2026]
+## Version 4.07 [19-03-2026]
 
 **All WoW Versions:**  
-- ElvUI 15.06+ compatibility  
-- Updated Action Bars (Disabled the new Spell Cast VFX by default)  
-- Updated Arena Frames (Buffs & Debuffs now ignore mouse events)  
-- Updated Boss Frames (Buffs & Debuffs now ignore mouse events)  
-- Updated color themes code (Correctly set color multiplier on theme swap)  
-- Updated Details profile (Removed combat timer next to the window header)  
-- Updated Experience bar slightly (Height, Width)  
+- ElvUI 15.09+ compatibility  
+- Added a new 4 slot actionbar to the player frame for consumable and trinket tracking  
+- Removed AddOnSkins profile (Outdated)  
+- Removed option for instance-only nameplate classification coloring (its in ElvUI 15.09 and later)  
+- Removed ProjectAzilroka profile (Outdated)  
+- Updated BigWigs profiles  
+- Updated WarpDeplete profile (Font size 11 > 12)  
 
 **Retail:**  
-- Added :status versions of the luckyone friendly abbrev name Tags  
-- Added BetterCooldownManager import to installer and config  
-- Added Blizzard Edit Mode import guide to installer and config  
-- Adjusted profile defaults for new ElvUI overAbsorb code  
-- Enabled Quest progress icon & text on ElvUI Nameplates  
-- Updated BigWigs profiles (Bar fixes & Disabled Private Aura anchor)  
-- Updated ElvUI Nameplates (Friendly players name-only and class colored in instances)  
-- Updated ElvUI Party & Raid Private Auras (Size, Position, Growth direction)  
-- Updated ElvUI Player Private Auras (Size, Position, Growth direction)  
-- Updated WindTools profile (Disabled UI errors replacement, adjusted some quest fonts)  
-
-**TBC:**  
-- Added layout setup for Party Pet Frames  
-- Disabled the returning "Target Aura" feature on Action Bars by default  
-
-**Classic:**  
-- Added layout setup for Party Pet Frames  
-- Disabled the returning "Target Aura" feature on Action Bars by default  
+- Abbreviate enchant names on the character frame by default  
+- Added BuffReminders profile to /lucky config  
+- Added PermoksAccountManager profile to /lucky config  
+- Adjusted PowerBarWidget anchor (Preys etc)  
+- Fixed priest aura indicator overlap (Void Shield / Prayer of Mending)  
+- Updated AyijeCDM profile (Castbar off by default but still configured and ready to use)  
+- Updated BetterCooldownManager profile (Castbar off by default but still configured and ready to use)  
+- Updated Private Auras slightly (Icon size, border scale, anchor position)  
+- Updated WindTools profile (No longer auto skip cutscenes except for myself)  

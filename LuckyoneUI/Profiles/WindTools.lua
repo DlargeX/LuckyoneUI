@@ -154,7 +154,7 @@ function Private:Setup_WindTools(installer)
 	E.db.movers = E.db.movers or {}
 
 	-- Movers
-	E.db.movers.WTCombatAlertFrameMover = (scaled and 'BOTTOM,ElvUIParent,BOTTOM,0,450') or 'BOTTOM,ElvUIParent,BOTTOM,0,640'
+	E.db.movers.WTCombatAlertFrameMover = (scaled and 'BOTTOM,ElvUIParent,BOTTOM,0,450') or 'BOTTOM,ElvUIParent,BOTTOM,0,660'
 	E.db.movers.WTMinimapButtonBarAnchor = 'TOPRIGHT,ElvUIParent,TOPRIGHT,-2,-202'
 	E.db.movers.WTParagonReputationToastFrameMover = 'TOP,ElvUIParent,TOP,0,-110'
 
@@ -254,4 +254,8 @@ function Private:Setup_Private_WindTools()
 	Set(E.private, 'WT.tooltips.tierSet', false)
 	Set(E.private, 'WT.tooltips.titleIcon.enable', false)
 	Set(E.private, 'WT.unitFrames.roleIcon.enable', false)
+
+	if Private.itsLuckyone then
+		Set(E.private, 'WT.misc.skipCutScene', true)
+	end
 end

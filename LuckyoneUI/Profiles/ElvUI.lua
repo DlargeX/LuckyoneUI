@@ -411,6 +411,8 @@ function Private:Setup_NamePlates(installer)
 	E.db.nameplates.units.ENEMY_NPC.health.text.position = 'TOPRIGHT'
 	E.db.nameplates.units.ENEMY_NPC.health.text.xOffset = -1
 	E.db.nameplates.units.ENEMY_NPC.health.text.yOffset = -16
+	E.db.nameplates.units.ENEMY_NPC.health.useClassificationColor = true
+	E.db.nameplates.units.ENEMY_NPC.health.useClassificationColorInInstance = true
 	E.db.nameplates.units.ENEMY_NPC.health.width = 210
 	E.db.nameplates.units.ENEMY_NPC.level.enable = false
 	E.db.nameplates.units.ENEMY_NPC.name.font = Private.Font
@@ -602,7 +604,6 @@ function Private:Setup_ElvUI(layout)
 	E.db.general.guildBank.countFontOutline = Private.Outline
 	E.db.general.guildBank.itemLevelFont = Private.Font
 	E.db.general.guildBank.itemLevelFontOutline = Private.Outline
-	E.db.general.itemLevel.enchantAbbrev = false
 	E.db.general.itemLevel.itemLevelFont = Private.Font
 	E.db.general.itemLevel.itemLevelFontSize = 10
 	E.db.general.itemLevel.totalLevelFont = Private.Font
@@ -639,12 +640,12 @@ function Private:Setup_ElvUI(layout)
 	E.db.general.minimap.size = 197
 	E.db.general.objectiveFrameAutoHide = false
 	E.db.general.objectiveFrameHeight = 600
-	E.db.general.privateAuras.borderScale = 4.5
+	E.db.general.privateAuras.borderScale = 4
 	E.db.general.privateAuras.countdownNumbers = true
 	E.db.general.privateAuras.duration.enable = false
 	E.db.general.privateAuras.icon.amount = 5
 	E.db.general.privateAuras.icon.offset = 10
-	E.db.general.privateAuras.icon.size = 60
+	E.db.general.privateAuras.icon.size = 48
 	E.db.general.privateRaidWarning.scale = 1.5
 	E.db.general.queueStatus.scale = 0.3
 	E.db.general.tagUpdateRate = 0.33
@@ -673,7 +674,7 @@ function Private:Setup_ElvUI(layout)
 			E.db.actionbar['bar'..i].hotkeyTextYOffset = -1
 			E.db.actionbar['bar'..i].macroFont = Private.Font
 			E.db.actionbar['bar'..i].macroFontOutline = Private.Outline
-			E.db.actionbar['bar'..i].macrotext = true
+			E.db.actionbar['bar'..i].macrotext = false
 			E.db.actionbar['bar'..i].macroTextPosition = 'BOTTOM'
 			E.db.actionbar['bar'..i].macroTextXOffset = 1
 			E.db.actionbar['bar'..i].macroTextYOffset = 1
@@ -688,11 +689,23 @@ function Private:Setup_ElvUI(layout)
 	E.db.actionbar.bar5.mouseover = true
 
 	-- Turn off all ActionBars except the ones we use by default
-	for i = 1, 15 do
+	for i = 1, 14 do
 		if i ~= 1 and i ~= 2 and i ~= 3 and i ~= 5 and i ~= 11 and i ~= 12 then
 			E.db.actionbar['bar'..i].enabled = false
 		end
 	end
+
+	-- Player Frame ActionBar for consumables and trinket
+	E.db.actionbar.bar15.buttons = 4
+	E.db.actionbar.bar15.buttonSize = 28
+	E.db.actionbar.bar15.buttonsPerRow = 4
+	E.db.actionbar.bar15.countFontSize = 12
+	E.db.actionbar.bar15.countTextPosition = 'BOTTOM'
+	E.db.actionbar.bar15.countTextYOffset = -5
+	E.db.actionbar.bar15.enabled = true
+	E.db.actionbar.bar15.hotkeytext = false
+	E.db.actionbar.bar15.point = 'TOPRIGHT'
+	E.db.actionbar.bar15.showGrid = false
 
 	E.db.actionbar.barPet.backdrop = false
 	E.db.actionbar.barPet.buttonSize = 28
@@ -1180,7 +1193,7 @@ function Private:Setup_ElvUI(layout)
 		justifyH = 'RIGHT',
 		size = 12,
 		text_format = '[luckyone:power:percent-color<%]',
-		xOffset = -3,
+		xOffset = -2,
 		yOffset = -12
 	}
 
@@ -1244,6 +1257,7 @@ function Private:Setup_ElvUI(layout)
 	E.db.unitframe.units.boss.orientation = 'LEFT'
 	E.db.unitframe.units.boss.power.enable = false
 	E.db.unitframe.units.boss.power.text_format = ''
+	E.db.unitframe.units.boss.privateAuras.enable = false
 	E.db.unitframe.units.boss.raidicon.attachTo = 'RIGHT'
 	E.db.unitframe.units.boss.raidicon.size = 40
 	E.db.unitframe.units.boss.raidicon.xOffset = 42
@@ -1440,14 +1454,14 @@ function Private:Setup_ElvUI(layout)
 	E.db.unitframe.units.player.castbar.customColor.useCustomBackdrop = true
 	E.db.unitframe.units.player.castbar.customTextFont.enable = true
 	E.db.unitframe.units.player.castbar.customTextFont.font = Private.Font
-	E.db.unitframe.units.player.castbar.customTextFont.fontSize = 12
+	E.db.unitframe.units.player.castbar.customTextFont.fontSize = 14
 	E.db.unitframe.units.player.castbar.customTimeFont.enable = true
 	E.db.unitframe.units.player.castbar.customTimeFont.font = Private.Font
-	E.db.unitframe.units.player.castbar.customTimeFont.fontSize = 12
-	E.db.unitframe.units.player.castbar.height = 22
+	E.db.unitframe.units.player.castbar.customTimeFont.fontSize = 14
+	E.db.unitframe.units.player.castbar.height = 26
 	E.db.unitframe.units.player.castbar.hideName = true
 	E.db.unitframe.units.player.castbar.latency = false
-	E.db.unitframe.units.player.castbar.spark = true
+	E.db.unitframe.units.player.castbar.spark = false
 	E.db.unitframe.units.player.castbar.textColor.b = 1
 	E.db.unitframe.units.player.castbar.textColor.g = 1
 	E.db.unitframe.units.player.castbar.textColor.r = 1
@@ -1456,8 +1470,7 @@ function Private:Setup_ElvUI(layout)
 	E.db.unitframe.units.player.castbar.tickColor.g = 1
 	E.db.unitframe.units.player.castbar.tickColor.r = 1
 	E.db.unitframe.units.player.castbar.tickWidth = 2
-	E.db.unitframe.units.player.castbar.timeToHold = 2
-	E.db.unitframe.units.player.castbar.width = 315
+	E.db.unitframe.units.player.castbar.width = 297
 	E.db.unitframe.units.player.castbar.xOffsetText = 2
 	E.db.unitframe.units.player.castbar.xOffsetTime = -2
 	E.db.unitframe.units.player.classbar.enable = false
@@ -1519,7 +1532,7 @@ function Private:Setup_ElvUI(layout)
 		justifyH = 'RIGHT',
 		size = 12,
 		text_format = '[luckyone:power:percent-color<%]',
-		xOffset = -3,
+		xOffset = -2,
 		yOffset = -12
 	}
 
@@ -1694,16 +1707,21 @@ function Private:Setup_ElvUI(layout)
 		yOffset = 0
 	}
 
-	E.db.unitframe.units.party.buffs.anchorPoint = 'TOPLEFT'
+	E.db.unitframe.units.party.buffIndicator.countFont = Private.Font
+	E.db.unitframe.units.party.buffIndicator.size = 14
+	E.db.unitframe.units.party.buffs.anchorPoint = 'BOTTOM'
 	E.db.unitframe.units.party.buffs.clickThrough = true
 	E.db.unitframe.units.party.buffs.countFont = Private.Font
 	E.db.unitframe.units.party.buffs.countFontSize = 10
 	E.db.unitframe.units.party.buffs.countPosition = 'TOPRIGHT'
 	E.db.unitframe.units.party.buffs.countXOffset = 1
 	E.db.unitframe.units.party.buffs.countYOffset = -1
-	E.db.unitframe.units.party.buffs.enable = false
+	E.db.unitframe.units.party.buffs.enable = Private.isRetail
+	E.db.unitframe.units.party.buffs.growthX = 'LEFT'
+	E.db.unitframe.units.party.buffs.isAuraRaidInCombatPlayer = false
+	E.db.unitframe.units.party.buffs.perrow = 3
 	E.db.unitframe.units.party.buffs.sizeOverride = 20
-	E.db.unitframe.units.party.buffs.yOffset = -21
+	E.db.unitframe.units.party.buffs.yOffset = 20
 	E.db.unitframe.units.party.classbar.enable = false
 	E.db.unitframe.units.party.debuffs.anchorPoint = 'TOPRIGHT'
 	E.db.unitframe.units.party.debuffs.countFont = Private.Font
@@ -1777,7 +1795,7 @@ function Private:Setup_ElvUI(layout)
 	-- Shared Raid1
 	E.db.unitframe.units.raid1.buffIndicator.countFont = Private.Font
 	E.db.unitframe.units.raid1.buffIndicator.countFontSize = 10
-	E.db.unitframe.units.raid1.buffs.anchorPoint = 'TOPLEFT'
+	E.db.unitframe.units.raid1.buffs.anchorPoint = 'BOTTOM'
 	E.db.unitframe.units.raid1.buffs.clickThrough = true
 	E.db.unitframe.units.raid1.buffs.countFont = Private.Font
 	E.db.unitframe.units.raid1.buffs.countFontSize = 10
@@ -1786,9 +1804,12 @@ function Private:Setup_ElvUI(layout)
 	E.db.unitframe.units.raid1.buffs.countYOffset = 0
 	E.db.unitframe.units.raid1.buffs.enable = false
 	E.db.unitframe.units.raid1.buffs.growthY = 'DOWN'
-	E.db.unitframe.units.raid1.buffs.perrow = 5
+	E.db.unitframe.units.raid1.buffs.isAuraBigDefensive = false
+	E.db.unitframe.units.raid1.buffs.isAuraBigDefensivePlayer = false
+	E.db.unitframe.units.raid1.buffs.isAuraRaidInCombatPlayer = false
+	E.db.unitframe.units.raid1.buffs.perrow = 1
 	E.db.unitframe.units.raid1.buffs.sizeOverride = 18
-	E.db.unitframe.units.raid1.buffs.yOffset = 1
+	E.db.unitframe.units.raid1.buffs.yOffset = 18
 	E.db.unitframe.units.raid1.classbar.enable = false
 	E.db.unitframe.units.raid1.debuffs.anchorPoint = 'BOTTOMLEFT'
 	E.db.unitframe.units.raid1.debuffs.countFont = Private.Font
@@ -1796,7 +1817,7 @@ function Private:Setup_ElvUI(layout)
 	E.db.unitframe.units.raid1.debuffs.countPosition = 'TOPRIGHT'
 	E.db.unitframe.units.raid1.debuffs.countXOffset = 2
 	E.db.unitframe.units.raid1.debuffs.countYOffset = 0
-	E.db.unitframe.units.raid1.debuffs.perrow = 5
+	E.db.unitframe.units.raid1.debuffs.perrow = 2
 	E.db.unitframe.units.raid1.debuffs.priority = 'Dispellable,RaidDebuffs'
 	E.db.unitframe.units.raid1.debuffs.sizeOverride = 18
 	E.db.unitframe.units.raid1.debuffs.yOffset = -1
@@ -1845,7 +1866,6 @@ function Private:Setup_ElvUI(layout)
 	-- Shared Raid3
 	E.db.unitframe.units.raid3.buffIndicator.countFont = Private.Font
 	E.db.unitframe.units.raid3.buffIndicator.countFontSize = 10
-	E.db.unitframe.units.raid3.buffIndicator.size = 6
 	E.db.unitframe.units.raid3.buffs.enable = false
 	E.db.unitframe.units.raid3.classbar.enable = false
 	E.db.unitframe.units.raid3.debuffs.countFont = Private.Font
@@ -1911,11 +1931,11 @@ function Private:Setup_ElvUI(layout)
 	E.db.movers.ElvAB_10 = 'TOPLEFT,ElvUIParent,TOPLEFT,1,-413'
 	E.db.movers.ElvAB_13 = 'TOPLEFT,ElvUIParent,TOPLEFT,1,-380'
 	E.db.movers.ElvAB_14 = 'TOPLEFT,ElvUIParent,TOPLEFT,1,-347'
-	E.db.movers.ElvAB_15 = 'TOPLEFT,ElvUIParent,TOPLEFT,1,-314'
+	E.db.movers.ElvAB_15 = (scaled and 'BOTTOM,ElvUIParent,BOTTOM,-215,411') or 'BOTTOM,ElvUIParent,BOTTOM,-247,551'
 	E.db.movers.ElvUF_FocusMover = (scaled and 'BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-338,440') or 'BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-628,630'
 	E.db.movers.ElvUF_PartyMover = (scaled and 'TOPLEFT,ElvUIParent,TOPLEFT,322,-240') or 'TOPLEFT,ElvUIParent,TOPLEFT,610,-400'
 	E.db.movers.ElvUF_PetMover = (scaled and 'BOTTOMLEFT,ElvUIParent,BOTTOMLEFT,451,360') or 'BOTTOMLEFT,ElvUIParent,BOTTOMLEFT,739,500'
-	E.db.movers.ElvUF_PlayerCastbarMover = (scaled and 'BOTTOM,ElvUIParent,BOTTOM,0,411') or 'BOTTOM,ElvUIParent,BOTTOM,0,551'
+	E.db.movers.ElvUF_PlayerCastbarMover = (scaled and 'BOTTOM,ElvUIParent,BOTTOM,0,306') or 'BOTTOM,ElvUIParent,BOTTOM,0,446'
 	E.db.movers.ElvUF_PlayerMover = (scaled and 'BOTTOM,ElvUIParent,BOTTOM,-288,360') or 'BOTTOM,ElvUIParent,BOTTOM,-320,500'
 	E.db.movers.ElvUF_RaidpetMover = 'BOTTOMLEFT,ElvUIParent,BOTTOMLEFT,1,458'
 	E.db.movers.ElvUF_TargetCastbarMover = (scaled and 'BOTTOM,ElvUIParent,BOTTOM,288,337') or 'BOTTOM,ElvUIParent,BOTTOM,320,477'
@@ -1937,8 +1957,8 @@ function Private:Setup_ElvUI(layout)
 	E.db.movers.MirrorTimer3Mover = 'TOP,ElvUIParent,TOP,0,-150'
 	E.db.movers.ObjectiveFrameMover = 'TOPRIGHT,ElvUIParent,TOPRIGHT,-120,-230'
 	E.db.movers.PlayerPowerBarMover = (scaled and 'BOTTOM,ElvUIParent,BOTTOM,-288,341') or 'BOTTOM,ElvUIParent,BOTTOM,-320,481'
-	E.db.movers.PowerBarContainerMover = 'TOP,ElvUIParent,TOP,0,-132'
-	E.db.movers.PrivateAurasMover = (scaled and 'BOTTOM,ElvUIParent,BOTTOM,-200,460') or 'BOTTOM,ElvUIParent,BOTTOM,-223,620'
+	E.db.movers.PowerBarContainerMover = 'TOP,ElvUIParent,TOP,0,-180'
+	E.db.movers.PrivateAurasMover = (scaled and 'BOTTOM,ElvUIParent,BOTTOM,-194,480') or 'BOTTOM,ElvUIParent,BOTTOM,-218,660'
 	E.db.movers.PrivateRaidWarningMover = 'TOP,ElvUIParent,TOP,0,-200'
 	E.db.movers.QuestTimerFrameMover = 'TOP,ElvUIParent,TOP,0,-24'
 	E.db.movers.QuestWatchFrameMover = 'TOPRIGHT,ElvUIParent,TOPRIGHT,-120,-230'
@@ -1959,16 +1979,13 @@ function Private:Setup_ElvUI(layout)
 
 	if layout == 'main' then
 
-		-- Main Player
-		E.db.unitframe.units.player.castbar.height = 22
-		E.db.unitframe.units.player.castbar.width = 315
-
 		-- Main Party
 		E.db.unitframe.units.party.customTexts.Luckyone_Name.text_format = (Private.isRetail and '[luckyone:name:short-color-friendly]' or '[luckyone:name:short-classcolor]') .. (not Private.isRetail and '[ ||r- >luckyone:healermana:percent]' or '[ ||r- >luckyone:healermana:percent<%]')
 
 		-- Main Raid1
-		E.db.unitframe.units.raid1.buffIndicator.size = 6
+		E.db.unitframe.units.raid1.buffIndicator.size = 10
 		E.db.unitframe.units.raid1.height = 40
+		E.db.unitframe.units.raid1.privateAuras.enable = false
 		E.db.unitframe.units.raid1.raidicon.attachTo = 'TOPRIGHT'
 		E.db.unitframe.units.raid1.raidicon.attachToObject = 'Health'
 		E.db.unitframe.units.raid1.raidicon.size = 12
@@ -1986,7 +2003,9 @@ function Private:Setup_ElvUI(layout)
 		E.db.unitframe.units.raid1.width = (scaled and 86) or 96
 
 		-- Main Raid2
+		E.db.unitframe.units.raid2.buffIndicator.size = 10
 		E.db.unitframe.units.raid2.height = 40
+		E.db.unitframe.units.raid2.privateAuras.enable = false
 		E.db.unitframe.units.raid2.raidicon.attachTo = 'TOPRIGHT'
 		E.db.unitframe.units.raid2.raidicon.attachToObject = 'Health'
 		E.db.unitframe.units.raid2.raidicon.size = 12
@@ -2004,6 +2023,7 @@ function Private:Setup_ElvUI(layout)
 		E.db.unitframe.units.raid2.width = (scaled and 86) or 96
 
 		-- Main Raid3
+		E.db.unitframe.units.raid3.buffIndicator.size = 8
 		E.db.unitframe.units.raid3.height = 30
 		E.db.unitframe.units.raid3.raidicon.attachTo = 'TOPRIGHT'
 		E.db.unitframe.units.raid3.raidicon.attachToObject = 'Health'
@@ -2064,6 +2084,7 @@ function Private:Setup_ElvUI(layout)
 
 		-- Healing Raid1
 		E.db.unitframe.units.raid1.buffIndicator.size = 14
+		E.db.unitframe.units.raid1.buffs.enable = Private.isRetail
 		E.db.unitframe.units.raid1.debuffs.enable = Private.isRetail
 		E.db.unitframe.units.raid1.height = (scaled and 60) or 70
 		E.db.unitframe.units.raid1.raidicon.attachTo = 'RIGHT'
@@ -2083,6 +2104,7 @@ function Private:Setup_ElvUI(layout)
 
 		-- Healing Raid2
 		E.db.unitframe.units.raid2.buffIndicator.size = 14
+		E.db.unitframe.units.raid2.buffs.enable = Private.isRetail
 		E.db.unitframe.units.raid2.debuffs.enable = Private.isRetail
 		E.db.unitframe.units.raid2.height = (scaled and 44) or 54
 		E.db.unitframe.units.raid2.raidicon.attachTo = 'RIGHT'
@@ -2101,6 +2123,7 @@ function Private:Setup_ElvUI(layout)
 		E.db.unitframe.units.raid2.width = 140
 
 		-- Healing Raid3
+		E.db.unitframe.units.raid3.buffIndicator.size = 10
 		E.db.unitframe.units.raid3.height = (scaled and 32) or 36
 		E.db.unitframe.units.raid3.raidicon.attachTo = 'RIGHT'
 		E.db.unitframe.units.raid3.raidicon.size = 12

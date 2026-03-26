@@ -1,4 +1,53 @@
-﻿## Version 4.05 [In Development]
+﻿## Version 4.08 [In Development]
+
+**Retail:**  
+- Updated BuffReminders profile  
+- Updated PermoksAccountManager profile  
+
+## Version 4.07 [19-03-2026]
+
+**All WoW Versions:**  
+- ElvUI 15.09+ compatibility  
+- Added a new 4 slot actionbar to the player frame for consumable and trinket tracking  
+- Removed AddOnSkins profile (Outdated)  
+- Removed option for instance-only nameplate classification coloring (its in ElvUI 15.09 and later)  
+- Removed ProjectAzilroka profile (Outdated)  
+- Updated BigWigs profiles  
+- Updated WarpDeplete profile (Font size 11 > 12)  
+
+**Retail:**  
+- Abbreviate enchant names on the character frame by default  
+- Added BuffReminders profile to /lucky config  
+- Added PermoksAccountManager profile to /lucky config  
+- Adjusted PowerBarWidget anchor (Preys etc)  
+- Fixed priest aura indicator overlap (Void Shield / Prayer of Mending)  
+- Updated AyijeCDM profile (Castbar off by default but still configured and ready to use)  
+- Updated BetterCooldownManager profile (Castbar off by default but still configured and ready to use)  
+- Updated Private Auras slightly (Icon size, border scale, anchor position)  
+- Updated WindTools profile (No longer auto skip cutscenes except for myself)  
+
+## Version 4.06 [10-03-2026]
+
+**All WoW Versions:**  
+- Changed back the default ElvUI castbar position to the bottom of the class HUD  
+- Disabled actionbar macro text by default  
+- Disabled time to hold on player castbar (was 2 seconds)  
+- Updated Plater profile (Fixed clickable area, moved CC icon out of the health bar)  
+
+**Retail:**  
+- Added profile import for the AyijeCDM AddOn  
+- Reworked party buffs to show externals and big defensives only (Max 3 icons)  
+- Reworked raid1 and raid2 buffs to show externals only (Max 1 icon)  
+- Updated 1080p anchors (Private aura icon x/y offsets)  
+- Updated 1080p editmode (No more mouseover tooltips for cdm spells)  
+- Updated aura indicators for hots and shields (All healer specs)  
+- Updated BetterCooldownManager import  
+- Updated WindTools profile (Auto skip cutscenes)  
+
+## Version 4.05 [04-03-2026]
+
+**All WoW Versions:**  
+- ElvUI 15.08+ compatibility  
 
 **Retail:**  
 - Added setup button for whitelisted aura indicators into the Auras tab of the config  
