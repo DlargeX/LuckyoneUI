@@ -1,8 +1,56 @@
-﻿## Version 4.08 [In Development]
+﻿## Version 4.10 [In Development]
+
+**All WoW Versions:**  
+- Color for absorbs is blue again (was yellow)  
+- Re-enabled DPS/Tank layout heal prediction on Player/Target  
+- Updated frFR locales (Credits: Oniria)  
+- Updated target Nameplate background color color (Blue > White)  
 
 **Retail:**  
+- Added Auto Dismount option to /lucky config - General Quality of Life  
+- Added Remove Nameplate Realms option to /lucky config - General - Misc  
+- Updated ElvUI layouts to display filtered debuffs 200px above the player frame  
+- Updated PermoksAccountManager profile  
+- Updated Priest aura indicators (Removed atonement health color, Fixed Prayer stack text overlap)  
+
+## Version 4.09 [14-04-2026]
+
+**All WoW Versions:**  
+- 1080p improvements (Fixed more initial import anchor positions)  
+- Added back the Augmentation/Support layout (Centered Raidframes, No Actionbars)  
+- Added Chattynator profile to /lucky config  
+- Healing layout player power is now only enabled if no CDM addon is loaded  
+- Updated ElvUI Nameplates (Pixel fixes for Castbar + Castbar icon)  
+- Updated Profile section of /lucky config  
+- Voicechat button on the chat is now hidden by default  
+
+**Retail:**  
+- Added new Application Cover option to the General tab of /lucky config  
+- Fixed Private Aura positions (Raid1, Raid2, Raid3)  
+- Updated Aura Indicators (Evoker, Priest)  
+- Updated BetterCooldownManager (Fixes the initial position for 1080p users)  
+- Updated BuffReminders profile (Y Offset)  
+- Updated PermoksAccountManager profile  
+- Updated WindTools profile (Skins)  
+
+## Version 4.08 [07-04-2026]
+
+**All WoW Versions:**  
+- ElvUI 15.11+ compatibility  
+- Added frFR locales (Credits: Oniria)  
+- Updated CVar values (Nameplate overlap H, Nameplate overlap V)  
+- Updated ElvUI Nameplates (Castbar, Cast target, Buff size, CC icons)  
+- Updated game tooltip default font size (11 > 12)  
+
+**Retail:**  
+- Absorbs color displayed on full health again (Overabsorb)  
+- Added Plumber profile to /lucky config  
 - Updated BuffReminders profile  
 - Updated PermoksAccountManager profile  
+- Updated Private Aura x offset for the latest ElvUI changes (Party frames)  
+
+**Mists:**  
+- Updated TOC for 5.5.3  
 
 ## Version 4.07 [19-03-2026]
 

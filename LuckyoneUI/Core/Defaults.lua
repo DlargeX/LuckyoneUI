@@ -12,6 +12,7 @@ Private.Defaults = {
 		-- Modules
 		disabledFrames = {
 			AlertFrame = false,
+			ApplicationCover = false,
 			BossBanner = false,
 			HousingDecorAlerts = false,
 			ZoneTextFrame = false,
@@ -20,10 +21,12 @@ Private.Defaults = {
 			hide = false,
 		},
 		misc = {
-			mythicVisibility = false,
 			dataTextsTweaks = false,
+			mythicVisibility = false,
+			removeNameplateRealm = false,
 		},
 		qualityOfLife = {
+			autoDismount = false,
 			easyDelete = false,
 			privacyOverlay = false,
 		},

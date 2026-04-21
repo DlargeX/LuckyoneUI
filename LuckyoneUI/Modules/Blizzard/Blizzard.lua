@@ -5,6 +5,7 @@ local Blizzard = Private.Modules.Blizzard
 
 -- API cache
 local CreateAndInitFromMixin = CreateAndInitFromMixin
+local CreateFrame = CreateFrame
 local GetNumQuestLogEntries = C_QuestLog.GetNumQuestLogEntries
 local GetQuestInfo = C_QuestLog.GetInfo
 local hooksecurefunc = hooksecurefunc
@@ -12,6 +13,7 @@ local RemoveQuestWatch = C_QuestLog.RemoveQuestWatch
 
 -- Global environment
 local _G = _G
+local UIParent = UIParent
 
 -- Global strings
 local DELETE_ITEM_CONFIRM_STRING = DELETE_ITEM_CONFIRM_STRING
@@ -39,6 +41,17 @@ function Private:DisabledFrames()
 	if Private.Addon.db.profile.disabledFrames.HousingDecorAlerts and Private.isRetail then
 		local HousingEventHandler = CreateAndInitFromMixin(_G.HousingEventHandlerMixin)
 		_G.EventRegistry:UnregisterFrameEventAndCallback('NEW_HOUSING_ITEM_ACQUIRED', HousingEventHandler.ShowHousingItemAcquiredAlert, HousingEventHandler)
+	end
+
+	if Private.Addon.db.profile.disabledFrames.ApplicationCover and Private.isRetail then
+		local HiddenFrame = CreateFrame('Frame', nil, UIParent)
+		HiddenFrame:Hide()
+		local Cover = _G.LFGListFrame.ApplicationViewer.UnempoweredCover
+		if Cover then
+			Cover:UnregisterAllEvents()
+			Cover:SetParent(HiddenFrame)
+			Cover:Hide()
+		end
 	end
 end
 
@@ -74,10 +87,18 @@ function Private:UntrackAllQuests()
 	Private:Print(L["Successfully untracked all quests (including hidden ones)"])
 end
 
+-- Removes the Realm names from friendly Nameplates in name-only mode while in a Dungeon/Raid/Battleground
+-- This sets (NamePlateFriendlyFrameOptions.updateNameUsesGetUnitName = nil) without tainting
+function Private:RemoveNameplateRealm()
+	if not (Private.isRetail and Private.Addon.db.profile.misc.removeNameplateRealm) then return end
+	_G.TextureLoadingGroupMixin.RemoveTexture({textures = _G.NamePlateFriendlyFrameOptions}, 'updateNameUsesGetUnitName')
+end
+
 function Blizzard:PLAYER_ENTERING_WORLD()
 	Private:DisabledFrames()
 	Private:EasyDelete()
 	Private:PrivacyOverlay()
+	Private:RemoveNameplateRealm()
 end
 
 function Blizzard:OnEnable()

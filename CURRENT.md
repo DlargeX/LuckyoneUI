@@ -1,21 +1,19 @@
-## Version 4.07 [19-03-2026]
+## Version 4.09 [14-04-2026]
 
 **All WoW Versions:**  
-- ElvUI 15.09+ compatibility  
-- Added a new 4 slot actionbar to the player frame for consumable and trinket tracking  
-- Removed AddOnSkins profile (Outdated)  
-- Removed option for instance-only nameplate classification coloring (its in ElvUI 15.09 and later)  
-- Removed ProjectAzilroka profile (Outdated)  
-- Updated BigWigs profiles  
-- Updated WarpDeplete profile (Font size 11 > 12)  
+- 1080p improvements (Fixed more initial import anchor positions)  
+- Added back the Augmentation/Support layout (Centered Raidframes, No Actionbars)  
+- Added Chattynator profile to /lucky config  
+- Healing layout player power is now only enabled if no CDM addon is loaded  
+- Updated ElvUI Nameplates (Pixel fixes for Castbar + Castbar icon)  
+- Updated Profile section of /lucky config  
+- Voicechat button on the chat is now hidden by default  
 
 **Retail:**  
-- Abbreviate enchant names on the character frame by default  
-- Added BuffReminders profile to /lucky config  
-- Added PermoksAccountManager profile to /lucky config  
-- Adjusted PowerBarWidget anchor (Preys etc)  
-- Fixed priest aura indicator overlap (Void Shield / Prayer of Mending)  
-- Updated AyijeCDM profile (Castbar off by default but still configured and ready to use)  
-- Updated BetterCooldownManager profile (Castbar off by default but still configured and ready to use)  
-- Updated Private Auras slightly (Icon size, border scale, anchor position)  
-- Updated WindTools profile (No longer auto skip cutscenes except for myself)  
+- Added new Application Cover option to the General tab of /lucky config  
+- Fixed Private Aura positions (Raid1, Raid2, Raid3)  
+- Updated Aura Indicators (Evoker, Priest)  
+- Updated BetterCooldownManager (Fixes the initial position for 1080p users)  
+- Updated BuffReminders profile (Y Offset)  
+- Updated PermoksAccountManager profile  
+- Updated WarpDeplete profile (Skins)  
