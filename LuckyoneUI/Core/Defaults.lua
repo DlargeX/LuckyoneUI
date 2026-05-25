@@ -15,6 +15,8 @@ Private.Defaults = {
 			ApplicationCover = false,
 			BossBanner = false,
 			HousingDecorAlerts = false,
+			LossOfControl = false,
+			UIErrorsFrame = false,
 			ZoneTextFrame = false,
 		},
 		minimap = {
@@ -25,10 +27,18 @@ Private.Defaults = {
 			mythicVisibility = false,
 			removeNameplateRealm = false,
 		},
+		nameplates = {
+			focusTexture = 'Luckyone Focus',
+			focusTextureEnable = false,
+			targetTexture = 'ElvUI Blank',
+			targetTextureEnable = false,
+		},
 		qualityOfLife = {
+			autoAcceptRole = false,
 			autoDismount = false,
 			easyDelete = false,
 			privacyOverlay = false,
+			quickSignup = false,
 		},
 		skins = {
 			BugSack = false,
@@ -39,6 +49,9 @@ Private.Defaults = {
 			NovaWorldBuffs = false,
 			Tabardy = false,
 			WhatsTraining = false,
+			Blizzard = {
+				CooldownViewer = false,
+			}
 		},
 	}
 }

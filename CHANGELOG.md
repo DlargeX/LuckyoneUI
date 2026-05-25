@@ -1,13 +1,69 @@
-﻿## Version 4.11 [In Development]
+﻿## Version 4.15 [In Development]
+
+**Retail:**  
+- Added option to select a different ElvUI target nameplate texture  
+
+## Version 4.14 [22-05-2026]
+
+**All WoW Versions:**  
+- ElvUI 15.14+ compatibility  
+- Adjusted Nameplate spacing for the new HitTestInset changes (OverlapV 1.8, Click height 22)  
+- Removed Plater from the installer (Still available via /lucky config)  
+- Updated Details profile  
+- Updated the installer steps  
+
+**Retail:**  
+- Added option to select a different ElvUI focus nameplate texture  
+- Fixed an error regarding the new double-clicking to signup option  
+- Updated Northern Sky Raid Tools profile (For next release or alpha version users)  
+- Updated PermoksAccountManager profile  
+- Updated SkironCooldownManager profile (Requires alpha)  
+
+## Version 4.13 [13-05-2026]
+
+**All WoW Versions:**  
+- Added option to disable and hide the UI Errors Frame to /lucky config  
+- Updated deDE locales  
+- Updated frFR locales (Credits: Oniria)  
+
+**Retail:**  
+- Added option to auto accept role check popups in LFG to /lucky config  
+- Added option to enable double-clicking to signup in LFG to /lucky config  
+- Added skin for the Blizzard Cooldown Manager settings panel  
+- Removed BetterCooldownManager profile  
+- Updated SkironCooldownManager profile for all 40 specs (Requires alpha)  
+- Updated the edit mode specialization strings for all 40 specs (Advanced)  
+
+## Version 4.12 [06-05-2026]
+
+**All WoW Versions:**  
+- 1080p improvements (BigWigs and Details)  
+- Added optional profile for the Baganator addon  
+- Updated frFR locales (Credits: Oniria)  
+- Updated graphics config section mouseover descriptions  
+
+**Retail:**  
+- Added basic edit mode specialization strings for all 40 specs (WIP)  
+- Added new Cooldown Manager section in /lucky config  
+- Added optional profile for the MPlusTimer addon  
+- Added SkironCooldownManager profile (Requires alpha)  
+- Adjusted default Y-offset of Boss- and Zone button slightly  
+
+## Version 4.11 [29-04-2026]
 
 **All WoW Versions:**  
 - ElvUI 15.13+ compatibility  
 - Updated BigWigs profiles  
+- Updated Details profile (1440p only)  
+- Updated ElvUI party frames (Ready Check Indicator size)  
 
 **Retail:**  
+- Added Northern Sky Raid Tools profile to /lucky config (Requires alpha or 12.0.91 or later)  
+- Added option to disable and hide the Loss of Control Frame to /lucky config  
 - Updated AyijeCDM profile  
 - Updated BetterCooldownManager profile  
-- Updated PermoksAccountManager profile  
+- Updated Evoker Aura Indicators (Added and enabled Source of Magic)  
+- Updated PermoksAccountManager profile (Added bonusrolls to main tab)  
 
 ## Version 4.10 [22-04-2026]
 

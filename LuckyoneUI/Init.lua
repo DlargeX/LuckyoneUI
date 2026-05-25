@@ -7,6 +7,7 @@ local GetAddOnMetadata = C_AddOns.GetAddOnMetadata
 local GetBuildInfo = GetBuildInfo
 local GetRealmName = GetRealmName
 local IsAddOnLoaded = C_AddOns.IsAddOnLoaded
+local UnitClass = UnitClass
 local UnitGUID = UnitGUID
 local UnitName = UnitName
 
@@ -66,9 +67,11 @@ Private.isRetail = WOW_PROJECT_ID == WOW_PROJECT_MAINLINE
 
 -- API checks
 Private.IsAddOnLoaded = IsAddOnLoaded
+Private.IsEditModeActive = Private.isTBC or Private.isRetail
 Private.Version = tonumber(GetAddOnMetadata(Name, 'Version'))
 
 -- Player utils
+Private.myClass = select(2, UnitClass('player'))
 Private.myGUID = UnitGUID('player')
 Private.myName = UnitName('player')
 Private.myRealm = GetRealmName()
@@ -83,6 +86,7 @@ Private.Modules = {
 	Core = Private.Addon:NewModule('Core', 'AceEvent-3.0'),
 	Blizzard = Private.Addon:NewModule('Blizzard', 'AceEvent-3.0'),
 	Misc = Private.ElvUI and Private.Addon:NewModule('Misc', 'AceEvent-3.0') or nil,
+	NamePlates = Private.ElvUI and Private.Addon:NewModule('NamePlates', 'AceEvent-3.0') or nil,
 }
 
 -- Called directly after the addon is fully loaded
