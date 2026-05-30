@@ -1,7 +1,15 @@
 ﻿## Version 4.15 [In Development]
 
+**All WoW Versions:**  
+- Disabled Action Bar 15 by default (Its still configured and can be re-enabled)  
+- Reworked Debuffs on Party and Raidframes  
+- Updated ruRU localization (Credits: Hollicsh)  
+
 **Retail:**  
 - Added option to select a different ElvUI target nameplate texture  
+- Reworked Private Auras on Party and Raidframes  
+- Updated Northern Sky Raid Tools profile  
+- Updated SkironCooldownManager profile (Requires alpha)  
 
 ## Version 4.14 [22-05-2026]
 
