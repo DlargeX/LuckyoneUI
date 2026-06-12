@@ -164,6 +164,7 @@ function Private:Setup_PrivateDB(includePlugins)
 		E.private.chat.enable = (not Private.IsAddOnLoaded('Chattynator'))
 		E.private.general.chatBubbles = 'disabled'
 		E.private.nameplates.enable = (not Private.IsAddOnLoaded('Plater'))
+		E.private.unitframe.disabledBlizzardFrames.castbar = (not Private.IsAddOnLoaded('SkironCooldownManager'))
 	end
 end
 
@@ -631,13 +632,13 @@ function Private:Setup_ElvUI(layout)
 	E.db.general.minimap.size = 197
 	E.db.general.objectiveFrameAutoHide = false
 	E.db.general.objectiveFrameHeight = 600
-	E.db.general.privateAuras.borderScale = 4
+	E.db.general.privateAuras.borderScale = -10
+	E.db.general.privateAuras.clickThrough = true
 	E.db.general.privateAuras.countdownNumbers = true
 	E.db.general.privateAuras.duration.enable = false
-	E.db.general.privateAuras.enable = false
-	E.db.general.privateAuras.icon.amount = 5
-	E.db.general.privateAuras.icon.offset = 10
-	E.db.general.privateAuras.icon.size = 48
+	E.db.general.privateAuras.icon.amount = 4
+	E.db.general.privateAuras.icon.offset = 1
+	E.db.general.privateAuras.icon.size = 54
 	E.db.general.privateRaidWarning.scale = 1.5
 	E.db.general.queueStatus.scale = 0.3
 	E.db.general.tagUpdateRate = 0.33
@@ -1431,11 +1432,20 @@ function Private:Setup_ElvUI(layout)
 	}
 
 	E.db.unitframe.units.player.aurabar.enable = false
+	E.db.unitframe.units.player.buffs.anchorPoint = 'BOTTOM'
 	E.db.unitframe.units.player.buffs.attachTo = 'FRAME'
+	E.db.unitframe.units.player.buffs.clickThrough = true
 	E.db.unitframe.units.player.buffs.countFont = Private.Font
-	E.db.unitframe.units.player.buffs.perrow = 10
+	E.db.unitframe.units.player.buffs.countFontSize = 10
+	E.db.unitframe.units.player.buffs.countPosition = 'TOPRIGHT'
+	E.db.unitframe.units.player.buffs.countXOffset = 2
+	E.db.unitframe.units.player.buffs.countYOffset = 0
+	E.db.unitframe.units.player.buffs.enable = Private.isRetail
+	E.db.unitframe.units.player.buffs.isAuraBigDefensive = false
+	E.db.unitframe.units.player.buffs.perrow = 3
 	E.db.unitframe.units.player.buffs.priority = 'Blacklist,Personal,NonPersonal'
-	E.db.unitframe.units.player.buffs.yOffset = 1
+	E.db.unitframe.units.player.buffs.sizeOverride = 30
+	E.db.unitframe.units.player.buffs.yOffset = 40
 	E.db.unitframe.units.player.castbar.customColor.color.b = 0.05
 	E.db.unitframe.units.player.castbar.customColor.color.g = 0.05
 	E.db.unitframe.units.player.castbar.customColor.color.r = 0.05
@@ -1507,10 +1517,12 @@ function Private:Setup_ElvUI(layout)
 		E.db.unitframe.units.player.debuffs.clickThrough = true
 		E.db.unitframe.units.player.debuffs.enable = true
 		E.db.unitframe.units.player.debuffs.growthX = 'LEFT'
+		E.db.unitframe.units.player.debuffs.isAuraPermanent = true
+		E.db.unitframe.units.player.debuffs.isAuraPermanentPlayer = true
 		E.db.unitframe.units.player.debuffs.numrows = 1
 		E.db.unitframe.units.player.debuffs.perrow = 4
 		E.db.unitframe.units.player.debuffs.sizeOverride = 54
-		E.db.unitframe.units.player.debuffs.spacing = 4
+		E.db.unitframe.units.player.debuffs.spacing = 1
 		E.db.unitframe.units.player.debuffs.useBlocklist = true
 		E.db.unitframe.units.player.debuffs.xOffset = 0
 		E.db.unitframe.units.player.debuffs.yOffset = 164
@@ -1993,7 +2005,7 @@ function Private:Setup_ElvUI(layout)
 	E.db.movers.ObjectiveFrameMover = 'TOPRIGHT,ElvUIParent,TOPRIGHT,-120,-230'
 	E.db.movers.PlayerPowerBarMover = (scaled and 'BOTTOM,ElvUIParent,BOTTOM,-288,341') or 'BOTTOM,ElvUIParent,BOTTOM,-320,481'
 	E.db.movers.PowerBarContainerMover = 'TOP,ElvUIParent,TOP,0,-180'
-	E.db.movers.PrivateAurasMover = (scaled and 'BOTTOM,ElvUIParent,BOTTOM,-182,512') or 'BOTTOM,ElvUIParent,BOTTOM,-218,660'
+	E.db.movers.PrivateAurasMover = (scaled and 'TOP,ElvUIParent,TOP,-185,-506') or 'BOTTOM,ElvUIParent,BOTTOM,-217,660'
 	E.db.movers.PrivateRaidWarningMover = 'TOP,ElvUIParent,TOP,0,-200'
 	E.db.movers.QuestTimerFrameMover = 'TOP,ElvUIParent,TOP,0,-24'
 	E.db.movers.QuestWatchFrameMover = 'TOPRIGHT,ElvUIParent,TOPRIGHT,-120,-230'
@@ -2122,8 +2134,10 @@ function Private:Setup_ElvUI(layout)
 		-- Healing Raid1
 		E.db.unitframe.units.raid1.buffIndicator.size = 14
 		E.db.unitframe.units.raid1.buffs.enable = Private.isRetail
+		E.db.unitframe.units.raid1.buffs.sizeOverride = 26
+		E.db.unitframe.units.raid1.buffs.yOffset = 26
 		E.db.unitframe.units.raid1.debuffs.enable = Private.isRetail
-		E.db.unitframe.units.raid1.debuffs.sizeOverride = 22
+		E.db.unitframe.units.raid1.debuffs.sizeOverride = 26
 		E.db.unitframe.units.raid1.height = (scaled and 60) or 70
 		E.db.unitframe.units.raid1.raidicon.attachTo = 'RIGHT'
 		E.db.unitframe.units.raid1.raidicon.size = 14
@@ -2180,7 +2194,7 @@ function Private:Setup_ElvUI(layout)
 		E.db.unitframe.units.raid3.width = 140
 
 		-- Healing Private Auras
-		E.db.unitframe.units.raid1.privateAuras.icon.size = 22
+		E.db.unitframe.units.raid1.privateAuras.icon.size = 26
 		E.db.unitframe.units.raid2.privateAuras.icon.size = 22
 
 		-- Main/Support Heal Prediction
